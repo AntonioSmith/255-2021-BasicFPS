@@ -31,10 +31,10 @@ public class PlayerMovement : MonoBehaviour
         // get input:
 
         float v = Input.GetAxis("Vertical"); // W + S / UP + DOWN : a value between -1 and 1
-        float h = Input.GetAxis("Horizaontal"); // A + D / LEFT + RIGHT : a value between -1 and 1
+        float h = Input.GetAxis("Horizontal"); // A + D / LEFT + RIGHT : a value between -1 and 1
 
-        transform.position += transform.right(1, 0, 0) * moveSpeed * Time.deltaTime * h;
-        transform.position += transform.forward(0, 0, 1) * moveSpeed * Time.deltaTime * v;
+        transform.position += transform.right * moveSpeed * Time.deltaTime * h;
+        transform.position += transform.forward * moveSpeed * Time.deltaTime * v;
 
         /* More options for how to move the object
         transform.position += new Vector3(moveSpeed * Time.deltaTime * h, 0, 0);                          //   \
